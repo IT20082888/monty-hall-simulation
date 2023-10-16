@@ -1,0 +1,21 @@
+<div>
+    <h2>Monty Hall Simulation</h2>
+  
+    <label for="numberOfSimulations">Number of Simulations:</label>
+    <input type="number" id="numberOfSimulations" [(ngModel)]="request.numberOfSimulations">
+  
+    <label for="changeDoor">Change Door:</label>
+    <input type="checkbox" id="changeDoor" [(ngModel)]="request.changeDoor">
+  
+    <button (click)="simulateGames()">Simulate</button>
+  
+    <div *ngIf="response">
+      <h3>Simulation Results</h3>
+      <ul>
+        <li *ngFor="let result of response.results">
+          {{ result.isWin ? 'Win' : 'Lose' }} - {{ result.switchedDoor ? 'Switched' : 'Not Switched' }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  
